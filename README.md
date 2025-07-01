@@ -1,4 +1,4 @@
-# INDEX_REPLICATION
+# Portfolio Optimization Tool
 
 This project implements a machine learning-based approach to index replication, which aims to construct a portfolio of stocks that closely tracks the performance of a given stock market index. The goal is to mimic the returns of indices that are not directly investable by most individuals.
 
