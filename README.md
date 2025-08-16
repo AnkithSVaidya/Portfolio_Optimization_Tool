@@ -128,25 +128,6 @@ cd src/cpp_core
 make clean
 make
 
-
-## Installation & Setup
-
-### Prerequisites
-1. Python <= 3.11.5
-2. C++17 compatible compiler (GCC 7+ or Clang 5+)
-3. Required Python packages:
-   - cvxpy
-   - numpy
-   - pandas
-   - yfinance
-   - matplotlib
-
-### Building C++ Components
-
-cd src/cpp_core
-make clean
-make
-
 ## Python Installation
 pip install -r requirements.txt
 
