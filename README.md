@@ -69,3 +69,85 @@ This project combines:
 | VaR Calculation | 10K simulations | 500ms | 100ms | 5x |
 
 ## Architecture
+Portfolio_Optimization_Tool/
+├── src/
+│   ├── portfolio_optimizer/    # Python ML implementation
+│   │   ├── optimizer.py
+│   │   ├── data_fetcher.py
+│   │   └── evaluator.py
+│   ├── cpp_core/               # C++ performance core
+│   │   ├── PortfolioOptimizer.cpp
+│   │   ├── MatrixOperations.cpp
+│   │   ├── CSVProcessor.cpp
+│   │   └── Makefile
+│   └── main.py                 # Main entry point
+├── data/                       # Historical data cache
+├── tests/                      # Test suite
+│   ├── test_optimizer.py
+│   └── synthetic_data_test.py
+└── README.md
+
+
+## Mathematical Formulation
+
+### Index Replication Problem
+
+**Objective Function:**
+minimize: ||Rp - Ri||² + λ₁||w||₁ + λ₂||w||₂²
+
+**Constraints:**
+- Σwᵢ = 1 (weights sum to 1)
+- wᵢ ≥ 0 (long-only constraint)
+- |Rp - Ri| ≤ ε (tracking error bound)
+
+Where:
+- Rp: Portfolio returns
+- Ri: Index returns
+- w: Asset weights
+- λ₁, λ₂: Regularization parameters
+
+### Sharpe Ratio Maximization (C++ Implementation)
+maximize: (w'μ - rf) / √(w'Σw)
+subject to: Σwᵢ = 1, wᵢ ≥ 0
+
+## Installation & Setup
+
+### Prerequisites
+1. Python <= 3.11.5
+2. C++17 compatible compiler (GCC 7+ or Clang 5+)
+3. Required Python packages:
+   - cvxpy
+   - numpy
+   - pandas
+   - yfinance
+   - matplotlib
+
+### Building C++ Components
+
+cd src/cpp_core
+make clean
+make
+
+
+## Installation & Setup
+
+### Prerequisites
+1. Python <= 3.11.5
+2. C++17 compatible compiler (GCC 7+ or Clang 5+)
+3. Required Python packages:
+   - cvxpy
+   - numpy
+   - pandas
+   - yfinance
+   - matplotlib
+
+### Building C++ Components
+
+cd src/cpp_core
+make clean
+make
+
+## Python Installation
+pip install -r requirements.txt
+
+
